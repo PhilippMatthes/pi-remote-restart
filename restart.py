@@ -16,7 +16,6 @@ telepot_user_key = 0000000
 class RestartBot:
     def __init__(self):
         self.bot = telepot.Bot(telepot_api_key)
-        self.send("Restart Bot started. Options: 'Restart' to restart and 'Quit' to quit!")
 
     def send(self, text):
         self.bot.sendMessage(telepot_user_key, text)
@@ -36,6 +35,10 @@ class RestartBot:
 
 
 if __name__ == "__main__":
+
+    restart_bot = RestartBot()
+    restart_bot.send("Restart Bot started. Options: 'Restart' to restart and 'Quit' to quit!")
+
     while True:
         try:
             restart_bot = RestartBot()
